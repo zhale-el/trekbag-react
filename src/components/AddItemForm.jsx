@@ -1,5 +1,13 @@
+import Button from "./Button";
+
 const AddItemForm = () => {
-  return <div>Enter</div>;
+  return (
+    <form>
+      <h2>Add an item</h2>
+      <input />
+      <Button />
+    </form>
+  );
 };
 
 export default AddItemForm;
