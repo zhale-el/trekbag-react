@@ -1,11 +1,23 @@
 import AddItemForm from "./AddItemForm";
 import ButtonGrop from "./ButtonGrop";
 
-const Sidebar = ({ setItems }) => {
+const Sidebar = ({
+  handleAddItem,
+  handleRemoveAllItems,
+  handleResetToInitial,
+  handleMarkAllAsComplete,
+  handleMarkAllAsInComplete,
+}) => {
   return (
     <div className="sidebar">
-      <AddItemForm setItems={setItems} />
-      <ButtonGrop />
+      <AddItemForm onAddItem={handleAddItem} />
+
+      <ButtonGrop
+        handleRemoveAllItems={handleRemoveAllItems}
+        handleResetToInitial={handleResetToInitial}
+        handleMarkAllAsComplete={handleMarkAllAsComplete}
+        handleMarkAllAsInComplete={handleMarkAllAsInComplete}
+      />
     </div>
   );
 };

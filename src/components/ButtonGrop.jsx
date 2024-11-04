@@ -1,16 +1,25 @@
-import { secondaryButtons } from "../lib/constants";
 import Button from "./Button";
 
-const ButtonGrop = () => {
+const ButtonGrop = ({
+  handleRemoveAllItems,
+  handleResetToInitial,
+  handleMarkAllAsComplete,
+  handleMarkAllAsInComplete,
+}) => {
   return (
     <section className="button-group">
-      {secondaryButtons.map((text) => {
-        return (
-          <Button key={text} type="secondary">
-            {text}
-          </Button>
-        );
-      })}
+      <Button buttonType="secondary" onClick={handleMarkAllAsComplete}>
+        Mark all as complete
+      </Button>
+      <Button buttonType="secondary" onClick={handleMarkAllAsInComplete}>
+        Mark all as incomplete
+      </Button>
+      <Button buttonType="secondary" onClick={handleResetToInitial}>
+        Reset to initial
+      </Button>
+      <Button buttonType="secondary" onClick={handleRemoveAllItems}>
+        Remove all items
+      </Button>
     </section>
   );
 };
