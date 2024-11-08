@@ -1,11 +1,15 @@
 import Button from "./Button";
 
-const ButtonGrop = ({
-  handleRemoveAllItems,
-  handleResetToInitial,
-  handleMarkAllAsComplete,
-  handleMarkAllAsInComplete,
-}) => {
+import { useItemsContext } from "../lib/hooks";
+
+const ButtonGrop = () => {
+  const {
+    handleMarkAllAsComplete,
+    handleMarkAllAsInComplete,
+    handleResetToInitial,
+    handleRemoveAllItems,
+  } = useItemsContext();
+
   return (
     <section className="button-group">
       <Button buttonType="secondary" onClick={handleMarkAllAsComplete}>

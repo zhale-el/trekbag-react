@@ -1,23 +1,15 @@
 import AddItemForm from "./AddItemForm";
 import ButtonGrop from "./ButtonGrop";
 
-const Sidebar = ({
-  handleAddItem,
-  handleRemoveAllItems,
-  handleResetToInitial,
-  handleMarkAllAsComplete,
-  handleMarkAllAsInComplete,
-}) => {
+import { useItemsContext } from "../lib/hooks";
+
+const Sidebar = () => {
+  const { handleAddItem } = useItemsContext();
   return (
     <div className="sidebar">
       <AddItemForm onAddItem={handleAddItem} />
 
-      <ButtonGrop
-        handleRemoveAllItems={handleRemoveAllItems}
-        handleResetToInitial={handleResetToInitial}
-        handleMarkAllAsComplete={handleMarkAllAsComplete}
-        handleMarkAllAsInComplete={handleMarkAllAsInComplete}
-      />
+      <ButtonGrop />
     </div>
   );
 };
